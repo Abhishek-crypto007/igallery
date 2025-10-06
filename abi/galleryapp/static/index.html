@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Image Gallery</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/script.js"></script>
+
+
+
+</head>
+<body>
+  <header class="site-header">
+    <h1>✨Interactive Image Gallery ✨</h1>
+    <p class="subtitle">Click a thumbnail to admire — double-click any large image to open the lightbox. 💖</p>
+  </header>
+
+  <main class="gallery-page">
+    <!-- Main viewer -->
+    <section class="viewer" aria-live="polite">
+      <div class="viewer-image-wrap">
+        <img id="mainImage" src="images/img1.jpg" alt="Image 1" />
+        <button id="favBtn" class="fav-btn" aria-pressed="false" title="Favorite">♡</button>
+      </div>
+      <figcaption id="caption">Image 1 — Sweet sunset</figcaption>
+      <div class="controls">
+        <button id="prevBtn" class="ctrl">◀ Prev</button>
+        <button id="playBtn" class="ctrl">▶ Play</button>
+        <button id="nextBtn" class="ctrl">Next ▶</button>
+      </div>
+    </section>
+
+    <!-- Thumbnail strip -->
+    <aside class="thumbs" aria-label="Gallery thumbnails">
+      <div class="thumb-grid">
+        <button class="thumb" data-src="images/img1.jpg" data-caption="Image 1 — Sweet sunset">
+          <img src="images/img1.jpg" alt="Thumb 1" />
+        </button>
+        <button class="thumb" data-src="images/img2.jpg" data-caption="Image 2 — Ocean breeze">
+          <img src="images/img2.jpg" alt="Thumb 2" />
+        </button>
+        <button class="thumb" data-src="images/img3.jpg" data-caption="Image 3 — City lights">
+          <img src="images/img3.jpg" alt="Thumb 3" />
+        </button>
+        <button class="thumb" data-src="images/img4.jpg" data-caption="Image 4 — Quiet forest">
+          <img src="images/img4.jpg" alt="Thumb 4" />
+        </button>
+        <button class="thumb" data-src="images/img5.jpg" data-caption="Image 5 — Mountain calm">
+          <img src="images/img5.jpg" alt="Thumb 5" />
+        </button>
+        <!-- add more thumbs if you like -->
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal / Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <button class="lb-close" id="lbClose" title="Close">✕</button>
+    <button class="lb-prev" id="lbPrev" title="Previous">◀</button>
+    <div class="lb-content">
+      <img id="lbImage" src="" alt="Expanded view" />
+      <div id="lbCaption" class="lb-caption"></div>
+    </div>
+    <button class="lb-next" id="lbNext" title="Next">▶</button>
+  </div>
+
+</body>
+</html>
